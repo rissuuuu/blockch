@@ -1,0 +1,1565 @@
+{
+	"info": {
+		"_postman_id": "9b6b270a-226e-4a78-a76e-1f0987b11d28",
+		"name": "Payment Management Service",
+		"description": "List Of Payment Management Service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(root)",
+			"item": [
+				{
+					"name": "List Subscribe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "property_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "energy_source_id",
+									"value": "4",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								""
+							]
+						},
+						"description": "List Subscribe"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"property_id\": -35926480,\n  \"energy_source_id\": 78472425,\n  \"type\": \"pending\",\n  \"valid_from\": \"2013-08-24T05:48:45.574Z\",\n  \"valid_till\": \"1948-10-17T04:32:48.091Z\",\n  \"auto_renewal\": false\n },\n {\n  \"property_id\": 85237458,\n  \"energy_source_id\": 478077,\n  \"type\": \"rejected\",\n  \"valid_from\": \"1976-12-01T08:36:10.858Z\",\n  \"valid_till\": \"1978-05-18T10:58:20.735Z\",\n  \"auto_renewal\": false\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "List Invoice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"property_id\": 1,\n    \"energy_source_id\": 1,\n    \"email\":\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/invoices?property_id=1&energy_source_id=1&email={{email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"invoices"
+							],
+							"query": [
+								{
+									"key": "property_id",
+									"value": "1",
+									"description": "Property ID"
+								},
+								{
+									"key": "energy_source_id",
+									"value": "1",
+									"description": "Energy Source ID"
+								},
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"description": "Current User Email"
+								}
+							]
+						},
+						"description": "List Subscribe"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"property_id\": -35926480,\n  \"energy_source_id\": 78472425,\n  \"type\": \"pending\",\n  \"valid_from\": \"2013-08-24T05:48:45.574Z\",\n  \"valid_till\": \"1948-10-17T04:32:48.091Z\",\n  \"auto_renewal\": false\n },\n {\n  \"property_id\": 85237458,\n  \"energy_source_id\": 478077,\n  \"type\": \"rejected\",\n  \"valid_from\": \"1976-12-01T08:36:10.858Z\",\n  \"valid_till\": \"1978-05-18T10:58:20.735Z\",\n  \"auto_renewal\": false\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "Subscribe a energy source",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "pending",
+									"description": "Subscription status (This can only be one of pending,accepted,rejected,null)",
+									"type": "text"
+								},
+								{
+									"key": "property_id",
+									"value": "2",
+									"description": "Property ID",
+									"type": "text"
+								},
+								{
+									"key": "energy_source_id",
+									"value": "4",
+									"description": "Energy Source ID",
+									"type": "text"
+								},
+								{
+									"key": "valid_from",
+									"value": "2019-01-01",
+									"description": "Valid From",
+									"type": "text"
+								},
+								{
+									"key": "valid_till",
+									"value": "2019-12-12",
+									"description": "Valid Til",
+									"type": "text"
+								},
+								{
+									"key": "auto_renewal",
+									"value": "False",
+									"description": "Auto Renewal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								""
+							]
+						},
+						"description": "Subscribe a energy source"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Subscription status (This can only be one of pending,accepted,rejected,null)",
+											"type": "text"
+										},
+										{
+											"key": "property_id",
+											"value": "<long>",
+											"description": "Property ID",
+											"type": "text"
+										},
+										{
+											"key": "energy_source_id",
+											"value": "<long>",
+											"description": "Energy Source ID",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<dateTime>",
+											"description": "Valid From",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<dateTime>",
+											"description": "Valid Til",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "Auto Renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Create an invoice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"description": "Email of the prosumer the invoice is sent to",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "200",
+									"description": "Invoice amount",
+									"type": "text"
+								},
+								{
+									"key": "subscription_id",
+									"value": "1",
+									"description": "Subscription ID",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/invoices",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								"invoices"
+							]
+						},
+						"description": "Subscribe a energy source"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Subscription status (This can only be one of pending,accepted,rejected,null)",
+											"type": "text"
+										},
+										{
+											"key": "property_id",
+											"value": "<long>",
+											"description": "Property ID",
+											"type": "text"
+										},
+										{
+											"key": "energy_source_id",
+											"value": "<long>",
+											"description": "Energy Source ID",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<dateTime>",
+											"description": "Valid From",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<dateTime>",
+											"description": "Valid Til",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "Auto Renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "{subscribe ID}",
+			"item": [
+				{
+					"name": "Update a Subscription Information",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "energy_source_id",
+									"value": "<integer>",
+									"description": "Energy source id",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "<string>",
+									"description": "Status (This can only be one of pending,accepted,rejected)",
+									"type": "text"
+								},
+								{
+									"key": "valid_from",
+									"value": "<string>",
+									"description": "valid_from",
+									"type": "text"
+								},
+								{
+									"key": "valid_till",
+									"value": "<string>",
+									"description": "valid till",
+									"type": "text"
+								},
+								{
+									"key": "auto_renewal",
+									"value": "<boolean>",
+									"description": "auto renewal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/:subscribeID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								":subscribeID"
+							],
+							"variable": [
+								{
+									"key": "subscribeID",
+									"value": "<long>",
+									"description": "(Required) subscribe ID"
+								}
+							]
+						},
+						"description": "Update a Subscription Information"
+					},
+					"response": [
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Subscription not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validation exception",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update a Subscription Information Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "subscription_status",
+									"value": "accepted",
+									"description": "Status (This can only be one of pending,accepted,rejected)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/:subscribeID/update_status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								":subscribeID",
+								"update_status"
+							],
+							"variable": [
+								{
+									"key": "subscribeID",
+									"value": "1",
+									"description": "(Required) subscribe ID"
+								}
+							]
+						},
+						"description": "Update a Subscription Information"
+					},
+					"response": [
+						{
+							"name": "Subscription not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validation exception",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "energy_source_id",
+											"value": "<integer>",
+											"description": "Energy source id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										},
+										{
+											"key": "valid_from",
+											"value": "<string>",
+											"description": "valid_from",
+											"type": "text"
+										},
+										{
+											"key": "valid_till",
+											"value": "<string>",
+											"description": "valid till",
+											"type": "text"
+										},
+										{
+											"key": "auto_renewal",
+											"value": "<boolean>",
+											"description": "auto renewal",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Update a Subscription Information Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "subscription_status",
+											"value": "accepted",
+											"description": "Status (This can only be one of pending,accepted,rejected)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/payment/:subscribeID/update_status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										":subscribeID",
+										"update_status"
+									],
+									"variable": [
+										{
+											"key": "subscribeID",
+											"value": "1",
+											"description": "(Required) subscribe ID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.4"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 04 Dec 2020 13:15:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"auto_renewal\": false,\n    \"created_date\": \"2020-11-23T03:34:24.920299Z\",\n    \"energy_source_id\": 1,\n    \"id\": 1,\n    \"property_id\": 1,\n    \"status\": \"accepted\",\n    \"updated_date\": \"2020-12-04T13:15:15.394362Z\",\n    \"valid_from\": \"2019-01-01T00:00:00Z\",\n    \"valid_till\": \"2019-12-12T00:00:00Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "2000",
+									"description": "Payment amount",
+									"type": "text"
+								},
+								{
+									"key": "invoice_id",
+									"value": "1",
+									"description": "Invoice detail",
+									"type": "text"
+								},
+								{
+									"key": "payment_method",
+									"value": "paypal",
+									"description": "payment method (paypal, p2ptoken)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/payment/:subscribeID/pay",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment",
+								":subscribeID",
+								"pay"
+							],
+							"variable": [
+								{
+									"key": "subscribeID",
+									"value": "1",
+									"description": "(Required) subscribe ID"
+								}
+							]
+						},
+						"description": "Create a payment"
+					},
+					"response": [
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "<string>",
+											"description": "Payment amount",
+											"type": "text"
+										},
+										{
+											"key": "invoice_id",
+											"value": "<integer>",
+											"description": "Invoice detail",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID/pay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID",
+										"pay"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Subscription not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "<string>",
+											"description": "Payment amount",
+											"type": "text"
+										},
+										{
+											"key": "invoice_id",
+											"value": "<integer>",
+											"description": "Invoice detail",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID/pay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID",
+										"pay"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "<string>",
+											"description": "Payment amount",
+											"type": "text"
+										},
+										{
+											"key": "invoice_id",
+											"value": "<integer>",
+											"description": "Invoice detail",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID/pay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID",
+										"pay"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validation exception",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "<string>",
+											"description": "Payment amount",
+											"type": "text"
+										},
+										{
+											"key": "invoice_id",
+											"value": "<integer>",
+											"description": "Invoice detail",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:subscribeID/pay",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":subscribeID",
+										"pay"
+									],
+									"variable": [
+										{
+											"key": "subscribeID"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "del_subscribers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/payment/del",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"del"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del_invoice",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/payment/delinvoice",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"delinvoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del_payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/payment/delpayment",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"delpayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deltrans",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/v1/payment/deltrans",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payment",
+						"deltrans"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/api/v1/payment",
+			"type": "string"
+		}
+	]
+}

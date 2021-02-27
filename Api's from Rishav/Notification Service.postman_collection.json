@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "9518710d-9bc0-416c-9e6f-5f1e6607a92a",
+		"name": "Notification Service",
+		"description": "Notification Service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(root)",
+			"item": [
+				{
+					"name": "Read the notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/notifications/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notifications",
+								""
+							]
+						},
+						"description": "Read the notifications"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -90233588,\n  \"prosumer_email\": \"nulla\",\n  \"property_id\": 89886949,\n  \"energy_id\": 49985547,\n  \"type\": \"reprehenderit eu minim nostrud cupidatat\",\n  \"message\": \"mollit irure\",\n  \"created_date\": \"2020-05-04T08:28:35.244Z\",\n  \"updated_date\": \"1964-05-19T14:43:44.241Z\"\n },\n {\n  \"id\": -28154088,\n  \"prosumer_email\": \"cupidatat aliqua\",\n  \"property_id\": 27966324,\n  \"energy_id\": 66433059,\n  \"type\": \"occaecat\",\n  \"message\": \"incididunt\",\n  \"created_date\": \"2017-10-19T09:00:16.348Z\",\n  \"updated_date\": \"1947-04-06T05:38:39.949Z\"\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create a new notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "prosumer_email",
+									"value": "<string>",
+									"description": "email",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "<string>",
+									"description": "Type (This can only be one of buyer_enquire_energy_source,seller_accept_contract)",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "<string>",
+									"description": "Message",
+									"type": "text"
+								},
+								{
+									"key": "property_id",
+									"value": "<integer>",
+									"description": "Property id",
+									"type": "text"
+								},
+								{
+									"key": "energy_id",
+									"value": "<integer>",
+									"description": "Energy id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Create a new notification"
+					},
+					"response": [
+						{
+							"name": "Successful create of new notification",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "prosumer_email",
+											"value": "<string>",
+											"description": "email",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "<string>",
+											"description": "Type (This can only be one of buyer_enquire_energy_source,seller_accept_contract)",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "<string>",
+											"description": "Message",
+											"type": "text"
+										},
+										{
+											"key": "property_id",
+											"value": "<integer>",
+											"description": "Property id",
+											"type": "text"
+										},
+										{
+											"key": "energy_id",
+											"value": "<integer>",
+											"description": "Energy id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -90233588,\n  \"prosumer_email\": \"nulla\",\n  \"property_id\": 89886949,\n  \"energy_id\": 49985547,\n  \"type\": \"reprehenderit eu minim nostrud cupidatat\",\n  \"message\": \"mollit irure\",\n  \"created_date\": \"2020-05-04T08:28:35.244Z\",\n  \"updated_date\": \"1964-05-19T14:43:44.241Z\"\n },\n {\n  \"id\": -28154088,\n  \"prosumer_email\": \"cupidatat aliqua\",\n  \"property_id\": 27966324,\n  \"energy_id\": 66433059,\n  \"type\": \"occaecat\",\n  \"message\": \"incididunt\",\n  \"created_date\": \"2017-10-19T09:00:16.348Z\",\n  \"updated_date\": \"1947-04-06T05:38:39.949Z\"\n }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/api/v1/notifications",
+			"type": "string"
+		}
+	]
+}

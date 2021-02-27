@@ -1,0 +1,2084 @@
+{
+	"info": {
+		"_postman_id": "7f611959-ad38-4473-8b4f-5722cfa241c7",
+		"name": "Energy Management Service",
+		"description": "List Of Energy Information Service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "(root)",
+			"item": [
+				{
+					"name": "Create a new energy type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "energy_type",
+									"value": "Wind",
+									"description": "Additional data to pass to server",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								""
+							]
+						},
+						"description": "Create a new energy type"
+					},
+					"response": [
+						{
+							"name": "Successful create of new energy type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -73903329,\n  \"name\": \"exercitation mollit\",\n  \"created_date\": -31614892.18102798,\n  \"updated_date\": -43363335.99303592\n },\n {\n  \"id\": 70068710,\n  \"name\": \"veniam dolore amet dolor\",\n  \"created_date\": 19070550.293001488,\n  \"updated_date\": -43860155.075446405\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "The energy type data structure supported by the server application",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								""
+							]
+						},
+						"description": "Read the list of Energy Type"
+					},
+					"response": [
+						{
+							"name": "Successful read energy type list operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -73903329,\n  \"name\": \"exercitation mollit\",\n  \"created_date\": -31614892.18102798,\n  \"updated_date\": -43363335.99303592\n },\n {\n  \"id\": 70068710,\n  \"name\": \"veniam dolore amet dolor\",\n  \"created_date\": 19070550.293001488,\n  \"updated_date\": -43860155.075446405\n }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "{energy Type Id}",
+			"item": [
+				{
+					"name": "The energy type data structure supported by the server application",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/:energyTypeId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								":energyTypeId"
+							],
+							"variable": [
+								{
+									"key": "energyTypeId",
+									"value": "1",
+									"description": "(Required) ID of Energy type to return"
+								}
+							]
+						},
+						"description": "Get a single Energy Type"
+					},
+					"response": [
+						{
+							"name": "Return energy type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:energyTypeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":energyTypeId"
+									],
+									"variable": [
+										{
+											"key": "energyTypeId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -73903329,\n  \"name\": \"exercitation mollit\",\n  \"created_date\": -31614892.18102798,\n  \"updated_date\": -43363335.99303592\n },\n {\n  \"id\": 70068710,\n  \"name\": \"veniam dolore amet dolor\",\n  \"created_date\": 19070550.293001488,\n  \"updated_date\": -43860155.075446405\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update a energy type detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "energy_type",
+									"value": "Solar",
+									"description": "Additional data to pass to server",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/:energyTypeId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								":energyTypeId"
+							],
+							"variable": [
+								{
+									"key": "energyTypeId",
+									"value": "1",
+									"description": "(Required) ID of Energy type to return"
+								}
+							]
+						},
+						"description": "Update a energy type detail"
+					},
+					"response": [
+						{
+							"name": "Energy type does not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:energyTypeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":energyTypeId"
+									],
+									"variable": [
+										{
+											"key": "energyTypeId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Energy Type updated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:energyTypeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":energyTypeId"
+									],
+									"variable": [
+										{
+											"key": "energyTypeId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Remove a energy type",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/:energyTypeId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								":energyTypeId"
+							],
+							"variable": [
+								{
+									"key": "energyTypeId",
+									"value": "2",
+									"description": "(Required) ID of Energy type"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Energy type was deleted.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:energyTypeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":energyTypeId"
+									],
+									"variable": [
+										{
+											"key": "energyTypeId"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Energy type does not exist.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:energyTypeId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":energyTypeId"
+									],
+									"variable": [
+										{
+											"key": "energyTypeId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "energy-source",
+			"item": [
+				{
+					"name": "{energy Source ID}",
+					"item": [
+						{
+							"name": "Get a single energy source",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/v1/energy/energy-source/:energySourceID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"energy",
+										"energy-source",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID",
+											"value": "1",
+											"description": "(Required) Energy Source ID"
+										}
+									]
+								},
+								"description": "Get a single energy source"
+							},
+							"response": [
+								{
+									"name": "Return energy source",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Energy source does not exist.",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update a energy source detail",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "new energy source",
+											"description": "Energy Source name",
+											"type": "text"
+										},
+										{
+											"key": "energy_type_id",
+											"value": "1",
+											"description": "Energy Type ID",
+											"type": "text"
+										},
+										{
+											"key": "prosumer_email",
+											"value": "{{email}}",
+											"description": "Prosumer Email",
+											"type": "text"
+										},
+										{
+											"key": "avg_production",
+											"value": "21",
+											"description": "Average Production Per Month(kWh)",
+											"type": "text"
+										},
+										{
+											"key": "net_energy_metering",
+											"value": "21",
+											"description": "Net Energy Metering",
+											"type": "text"
+										},
+										{
+											"key": "payment_duration",
+											"value": "12",
+											"description": "Payment Duration",
+											"type": "text"
+										},
+										{
+											"key": "payment_type",
+											"value": "Fixed",
+											"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+											"type": "text"
+										},
+										{
+											"key": "price_per_kwh",
+											"value": "20",
+											"description": "Price per kWh",
+											"type": "text"
+										},
+										{
+											"key": "sell_percent",
+											"value": "20",
+											"description": "Energy sell percentage",
+											"type": "text"
+										},
+										{
+											"key": "supplier",
+											"value": "Anish Poudel",
+											"description": "Name of Supplier",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/energy/energy-source/:energySourceID",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"energy",
+										"energy-source",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID",
+											"value": "1",
+											"description": "(Required) Energy Source ID"
+										}
+									]
+								},
+								"description": "Update a energy source detail"
+							},
+							"response": [
+								{
+									"name": "Energy Source does not exist",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"description": "Energy Source name",
+													"type": "text"
+												},
+												{
+													"key": "energy_type_id",
+													"value": "<long>",
+													"description": "Energy Type ID",
+													"type": "text"
+												},
+												{
+													"key": "prosumer_email",
+													"value": "<string>",
+													"description": "Prosumer Email",
+													"type": "text"
+												},
+												{
+													"key": "avg_production",
+													"value": "<float>",
+													"description": "Average Production Per Month(kWh)",
+													"type": "text"
+												},
+												{
+													"key": "net_energy_metering",
+													"value": "<float>",
+													"description": "Net Energy Metering",
+													"type": "text"
+												},
+												{
+													"key": "payment_duration",
+													"value": "<long>",
+													"description": "Payment Duration",
+													"type": "text"
+												},
+												{
+													"key": "payment_type",
+													"value": "<string>",
+													"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+													"type": "text"
+												},
+												{
+													"key": "price_per_kwh",
+													"value": "<float>",
+													"description": "Price per kWh",
+													"type": "text"
+												},
+												{
+													"key": "sell_percent",
+													"value": "<float>",
+													"description": "Energy sell percentage",
+													"type": "text"
+												},
+												{
+													"key": "supplier",
+													"value": "<string>",
+													"description": "Name of Supplier",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Energy Source updated",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"description": "Energy Source name",
+													"type": "text"
+												},
+												{
+													"key": "energy_type_id",
+													"value": "<long>",
+													"description": "Energy Type ID",
+													"type": "text"
+												},
+												{
+													"key": "prosumer_email",
+													"value": "<string>",
+													"description": "Prosumer Email",
+													"type": "text"
+												},
+												{
+													"key": "avg_production",
+													"value": "<float>",
+													"description": "Average Production Per Month(kWh)",
+													"type": "text"
+												},
+												{
+													"key": "net_energy_metering",
+													"value": "<float>",
+													"description": "Net Energy Metering",
+													"type": "text"
+												},
+												{
+													"key": "payment_duration",
+													"value": "<long>",
+													"description": "Payment Duration",
+													"type": "text"
+												},
+												{
+													"key": "payment_type",
+													"value": "<string>",
+													"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+													"type": "text"
+												},
+												{
+													"key": "price_per_kwh",
+													"value": "<float>",
+													"description": "Price per kWh",
+													"type": "text"
+												},
+												{
+													"key": "sell_percent",
+													"value": "<float>",
+													"description": "Energy sell percentage",
+													"type": "text"
+												},
+												{
+													"key": "supplier",
+													"value": "<string>",
+													"description": "Name of Supplier",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Remove a energy source",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID",
+											"value": "<long>",
+											"description": "(Required) Energy Source ID"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Energy source does not exist.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Energy source was deleted.",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/energy-source/:energySourceID",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"energy-source",
+												":energySourceID"
+											],
+											"variable": [
+												{
+													"key": "energySourceID"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get a list of energy source",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source"
+							]
+						},
+						"description": "Get a list of energy source"
+					},
+					"response": [
+						{
+							"name": "Energy source does not exist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Return list of energy source",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "meselling",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/selling",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"selling"
+							]
+						},
+						"description": "Get a list of energy source"
+					},
+					"response": [
+						{
+							"name": "Return list of energy source",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Energy source does not exist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "mebuying",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/buying",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"buying"
+							]
+						},
+						"description": "Get a list of energy source"
+					},
+					"response": [
+						{
+							"name": "Energy source does not exist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Return list of energy source",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Add a new energy source",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new energy source",
+									"description": "Energy Source name",
+									"type": "text"
+								},
+								{
+									"key": "energy_type_id",
+									"value": "1",
+									"description": "Energy Type ID",
+									"type": "text"
+								},
+								{
+									"key": "prosumer_email",
+									"value": "power@gmail.com",
+									"description": "Prosumer Email",
+									"type": "text"
+								},
+								{
+									"key": "avg_production",
+									"value": "21",
+									"description": "Average Production Per Month(kWh)",
+									"type": "text"
+								},
+								{
+									"key": "net_energy_metering",
+									"value": "2100",
+									"description": "Net Energy Metering",
+									"type": "text"
+								},
+								{
+									"key": "payment_duration",
+									"value": "12",
+									"description": "Payment Duration",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "Fixed",
+									"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+									"type": "text"
+								},
+								{
+									"key": "price_per_kwh",
+									"value": "20",
+									"description": "Price per kWh",
+									"type": "text"
+								},
+								{
+									"key": "sell_percent",
+									"value": "20",
+									"description": "Energy sell percent",
+									"type": "text"
+								},
+								{
+									"key": "supplier",
+									"value": "Anish Poudel",
+									"description": "Name of Supplier",
+									"type": "text"
+								},
+								{
+									"key": "energy_source_address",
+									"value": "{\"address_line_one\": \"massachusetts\", \"address_line_two\": \"massachusetts\", \"city\": \"massachusetts\", \"state\":\"massachusetts\", \"zip_code\": \"222\", \"point\": {\"lat\": 27.2121, \"lon\": 23.233}}\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source"
+							]
+						},
+						"description": "Add a new energy source"
+					},
+					"response": [
+						{
+							"name": "Invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Energy Source name",
+											"type": "text"
+										},
+										{
+											"key": "energy_type_id",
+											"value": "<long>",
+											"description": "Energy Type ID",
+											"type": "text"
+										},
+										{
+											"key": "prosumer_email",
+											"value": "<string>",
+											"description": "Prosumer Email",
+											"type": "text"
+										},
+										{
+											"key": "avg_production",
+											"value": "<float>",
+											"description": "Average Production Per Month(kWh)",
+											"type": "text"
+										},
+										{
+											"key": "net_energy_metering",
+											"value": "<float>",
+											"description": "Net Energy Metering",
+											"type": "text"
+										},
+										{
+											"key": "payment_duration",
+											"value": "<long>",
+											"description": "Payment Duration",
+											"type": "text"
+										},
+										{
+											"key": "payment_type",
+											"value": "<string>",
+											"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+											"type": "text"
+										},
+										{
+											"key": "price_per_kwh",
+											"value": "<float>",
+											"description": "Price per kWh",
+											"type": "text"
+										},
+										{
+											"key": "sell_percent",
+											"value": "<float>",
+											"description": "Energy sell percent",
+											"type": "text"
+										},
+										{
+											"key": "supplier",
+											"value": "<string>",
+											"description": "Name of Supplier",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Energy Source name",
+											"type": "text"
+										},
+										{
+											"key": "energy_type_id",
+											"value": "<long>",
+											"description": "Energy Type ID",
+											"type": "text"
+										},
+										{
+											"key": "prosumer_email",
+											"value": "<string>",
+											"description": "Prosumer Email",
+											"type": "text"
+										},
+										{
+											"key": "avg_production",
+											"value": "<float>",
+											"description": "Average Production Per Month(kWh)",
+											"type": "text"
+										},
+										{
+											"key": "net_energy_metering",
+											"value": "<float>",
+											"description": "Net Energy Metering",
+											"type": "text"
+										},
+										{
+											"key": "payment_duration",
+											"value": "<long>",
+											"description": "Payment Duration",
+											"type": "text"
+										},
+										{
+											"key": "payment_type",
+											"value": "<string>",
+											"description": "Payment Terms (This can only be one of Fixed,Installment,null)",
+											"type": "text"
+										},
+										{
+											"key": "price_per_kwh",
+											"value": "<float>",
+											"description": "Price per kWh",
+											"type": "text"
+										},
+										{
+											"key": "sell_percent",
+											"value": "<float>",
+											"description": "Energy sell percent",
+											"type": "text"
+										},
+										{
+											"key": "supplier",
+											"value": "<string>",
+											"description": "Name of Supplier",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/energy-source",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "The energy type data structure supported by the server application",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source/list?prosumer_email={{email}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source",
+								"list"
+							],
+							"query": [
+								{
+									"key": "prosumer_email",
+									"value": "{{email}}"
+								}
+							]
+						},
+						"description": "Read the list of Energy Source"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source/list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Energy_source_post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Rishav Paudel",
+									"type": "text"
+								},
+								{
+									"key": "energy_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "prosumer_email",
+									"value": "rissuuuu@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "avg_production",
+									"value": "1200",
+									"type": "text"
+								},
+								{
+									"key": "net_energy_metering",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "payment_duration",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "Installment",
+									"type": "text"
+								},
+								{
+									"key": "price_per_kwh",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "sell_percent",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "supplier",
+									"value": "Rissuu",
+									"type": "text"
+								},
+								{
+									"key": "energy_source_address",
+									"value": "Kathmandu",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marketplace",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/market",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"market"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "energy-source-price/{energy Source ID}",
+			"item": [
+				{
+					"name": "List Energy Source Price Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source-price/:energySourceID",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source-price",
+								":energySourceID"
+							],
+							"variable": [
+								{
+									"key": "energySourceID",
+									"value": "2",
+									"description": "(Required) Energy Source ID"
+								}
+							]
+						},
+						"description": "Get a single Energy Source Price"
+					},
+					"response": [
+						{
+							"name": "Energy source price detail does not exist.",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Return energy source price detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Add a new energy source price",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "per_day",
+									"value": "2",
+									"description": "Energy Price Per Day",
+									"type": "text"
+								},
+								{
+									"key": "per_month",
+									"value": "60",
+									"description": "Energy Price Per Month",
+									"type": "text"
+								},
+								{
+									"key": "per_year",
+									"value": "720",
+									"description": "Energy Price Per Year",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source-price/:energySourceID",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source-price",
+								":energySourceID"
+							],
+							"variable": [
+								{
+									"key": "energySourceID",
+									"value": "2",
+									"description": "(Required) Energy Source ID"
+								}
+							]
+						},
+						"description": "Add a new energy source price"
+					},
+					"response": [
+						{
+							"name": "Successful create of new energy type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update a energy source price detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "per_day",
+									"value": "3",
+									"description": "Energy Price Per Day",
+									"type": "text"
+								},
+								{
+									"key": "per_month",
+									"value": "90",
+									"description": "Energy Price Per Month",
+									"type": "text"
+								},
+								{
+									"key": "per_year",
+									"value": "900",
+									"description": "Energy Price Per Year",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/energy/energy-source-price/:energySourceID",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"energy",
+								"energy-source-price",
+								":energySourceID"
+							],
+							"variable": [
+								{
+									"key": "energySourceID",
+									"value": "1",
+									"description": "(Required) Energy Source ID"
+								}
+							]
+						},
+						"description": "Update a energy source price detail"
+					},
+					"response": [
+						{
+							"name": "Energy Type updated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Energy type does not exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Remove a energy source price detail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"energy-source-price",
+								":energySourceID"
+							],
+							"variable": [
+								{
+									"key": "energySourceID",
+									"value": "<long>",
+									"description": "(Required) Energy Source ID"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Energy Source Price Detail was deleted.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Energy Source Price Detail does not exist.",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/energy-source-price/:energySourceID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"energy-source-price",
+										":energySourceID"
+									],
+									"variable": [
+										{
+											"key": "energySourceID"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/api/v1/energy"
+		}
+	]
+}

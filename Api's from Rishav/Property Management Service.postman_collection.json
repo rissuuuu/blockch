@@ -1,0 +1,1137 @@
+{
+	"info": {
+		"_postman_id": "b2a2a8d9-2e5b-4534-9c45-200cd2b29440",
+		"name": "Property Management Service",
+		"description": "List Of Property Management Service APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{root}",
+			"item": [
+				{
+					"name": "Read the list of Property",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/property",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property"
+							]
+						},
+						"description": "Read the list of Property"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -46818246,\n  \"name\": \"aute eiusmod sed\",\n  \"prosumer_email\": \"sed\",\n  \"property_type\": \"et cupidatat velit nostrud\",\n  \"name_on_bill\": \"mollit minim quis Excep\",\n  \"meter_box_id\": \"ut fugiat reprehenderit\",\n  \"customer_no\": \"la\",\n  \"avg_energy_consumption\": -85556801.06093112,\n  \"buy_percent\": -109691.58498066664,\n  \"created_date\": -70185790.32411933,\n  \"updated_date\": -52104380.31573066\n },\n {\n  \"id\": -34085731,\n  \"name\": \"irure\",\n  \"prosumer_email\": \"mag\",\n  \"property_type\": \"cillum dolor\",\n  \"name_on_bill\": \"fugiat quis\",\n  \"meter_box_id\": \"ea labore\",\n  \"customer_no\": \"cupidatat dolore fugiat elit\",\n  \"avg_energy_consumption\": -32665079.603294075,\n  \"buy_percent\": 7360120.403178841,\n  \"created_date\": -26556216.6520036,\n  \"updated_date\": -32383871.301592126\n }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add a new property",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "eleena house",
+									"description": "Property Name",
+									"type": "text"
+								},
+								{
+									"key": "prosumer_email",
+									"value": "{{email}}",
+									"description": "Prosumer Email",
+									"type": "text"
+								},
+								{
+									"key": "customer_no",
+									"value": "1234",
+									"description": "Customer NO",
+									"type": "text"
+								},
+								{
+									"key": "property_type",
+									"value": "residential",
+									"description": "Property Type (This can only be one of residential,commercial,null)",
+									"type": "text"
+								},
+								{
+									"key": "name_on_bill",
+									"value": "Eleena Koirala",
+									"description": "Name on electric bill",
+									"type": "text"
+								},
+								{
+									"key": "meter_box_id",
+									"value": "1234",
+									"description": "Meter Box ID",
+									"type": "text"
+								},
+								{
+									"key": "avg_energy_consumption",
+									"value": "11",
+									"description": "Average Energy Consumption Per Month",
+									"type": "text"
+								},
+								{
+									"key": "property_address",
+									"value": "[{\"address_line_one\":\"one\"}]",
+									"description": "Property Address",
+									"type": "text"
+								},
+								{
+									"key": "buy_percent",
+									"value": "2",
+									"description": "Buy Percent",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"description": "Image of Electric Bill",
+									"type": "file",
+									"src": "/home/anish/Desktop/flask.png"
+								},
+								{
+									"key": "preferred_energy",
+									"value": "1",
+									"description": "Preferred Energy",
+									"type": "text"
+								},
+								{
+									"key": "preferred_energy",
+									"value": "2",
+									"description": "Preferred Energy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/property/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property",
+								""
+							]
+						},
+						"description": "Add a new property"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Property Name",
+											"type": "text"
+										},
+										{
+											"key": "prosumer_email",
+											"value": "<string>",
+											"description": "Prosumer Email",
+											"type": "text"
+										},
+										{
+											"key": "customer_no",
+											"value": "<string>",
+											"description": "Customer NO",
+											"type": "text"
+										},
+										{
+											"key": "preferred_energy",
+											"value": "<string>",
+											"description": "Preferred Energy",
+											"type": "text"
+										},
+										{
+											"key": "property_type",
+											"value": "<string>",
+											"description": "Property Type (This can only be one of residential,commercial,null)",
+											"type": "text"
+										},
+										{
+											"key": "name_on_bill",
+											"value": "<string>",
+											"description": "Name on electric bill",
+											"type": "text"
+										},
+										{
+											"key": "meter_box_id",
+											"value": "<string>",
+											"description": "Meter Box ID",
+											"type": "text"
+										},
+										{
+											"key": "avg_energy_consumption",
+											"value": "<number>",
+											"description": "Average Energy Consumption Per Month",
+											"type": "text"
+										},
+										{
+											"key": "property_address",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "Property Address",
+											"type": "text"
+										},
+										{
+											"key": "buy_percent",
+											"value": "<number>",
+											"description": "Buy Percent",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"value": "<binary>",
+											"description": "Image of Electric Bill",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -46818246,\n  \"name\": \"aute eiusmod sed\",\n  \"prosumer_email\": \"sed\",\n  \"property_type\": \"et cupidatat velit nostrud\",\n  \"name_on_bill\": \"mollit minim quis Excep\",\n  \"meter_box_id\": \"ut fugiat reprehenderit\",\n  \"customer_no\": \"la\",\n  \"avg_energy_consumption\": -85556801.06093112,\n  \"buy_percent\": -109691.58498066664,\n  \"created_date\": -70185790.32411933,\n  \"updated_date\": -52104380.31573066\n },\n {\n  \"id\": -34085731,\n  \"name\": \"irure\",\n  \"prosumer_email\": \"mag\",\n  \"property_type\": \"cillum dolor\",\n  \"name_on_bill\": \"fugiat quis\",\n  \"meter_box_id\": \"ea labore\",\n  \"customer_no\": \"cupidatat dolore fugiat elit\",\n  \"avg_energy_consumption\": -32665079.603294075,\n  \"buy_percent\": 7360120.403178841,\n  \"created_date\": -26556216.6520036,\n  \"updated_date\": -32383871.301592126\n }\n]"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "{property Id}",
+			"item": [
+				{
+					"name": "Read a Property Information",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/property/:propertyId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property",
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "11",
+									"description": "(Required) Property ID"
+								}
+							]
+						},
+						"description": "Read a Property Information"
+					},
+					"response": [
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Property not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validation exception",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Update a Property Information",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "customer_no",
+									"value": "1234",
+									"description": "Customer NO",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Kishore House",
+									"description": "Property Name",
+									"type": "text"
+								},
+								{
+									"key": "property_type",
+									"value": "residential",
+									"description": "Property Type (This can only be one of residential,commercial,null)",
+									"type": "text"
+								},
+								{
+									"key": "name_on_bill",
+									"value": "Kishore mainali",
+									"description": "Name on electric bill",
+									"type": "text"
+								},
+								{
+									"key": "meter_box_id",
+									"value": "12345",
+									"description": "Meter Box ID",
+									"type": "text"
+								},
+								{
+									"key": "avg_energy_consumption",
+									"value": "21",
+									"description": "Average Energy Consumption Per Month",
+									"type": "text"
+								},
+								{
+									"key": "property_address",
+									"value": "[{\"address_line_one\":\"one\"}]",
+									"description": "Property Address",
+									"type": "text"
+								},
+								{
+									"key": "buy_percent",
+									"value": "20",
+									"description": "Buy Percent",
+									"type": "text"
+								},
+								{
+									"key": "preferred_energy",
+									"value": "1",
+									"description": "Preferred Energy",
+									"type": "text"
+								},
+								{
+									"key": "submit",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/property/:propertyId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property",
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "2",
+									"description": "(Required) Property ID"
+								}
+							]
+						},
+						"description": "Update a Property Information"
+					},
+					"response": [
+						{
+							"name": "Property not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_no",
+											"value": "<string>",
+											"description": "Customer NO",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Property Name",
+											"type": "text"
+										},
+										{
+											"key": "property_type",
+											"value": "<string>",
+											"description": "Property Type (This can only be one of residential,commercial,null)",
+											"type": "text"
+										},
+										{
+											"key": "name_on_bill",
+											"value": "<string>",
+											"description": "Name on electric bill",
+											"type": "text"
+										},
+										{
+											"key": "meter_box_id",
+											"value": "<string>",
+											"description": "Meter Box ID",
+											"type": "text"
+										},
+										{
+											"key": "avg_energy_consumption",
+											"value": "<number>",
+											"description": "Average Energy Consumption Per Month",
+											"type": "text"
+										},
+										{
+											"key": "property_address",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "Property Address",
+											"type": "text"
+										},
+										{
+											"key": "buy_percent",
+											"value": "<number>",
+											"description": "Buy Percent",
+											"type": "text"
+										},
+										{
+											"key": "preferred_energy",
+											"value": "<string>",
+											"description": "Preferred Energy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Validation exception",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_no",
+											"value": "<string>",
+											"description": "Customer NO",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Property Name",
+											"type": "text"
+										},
+										{
+											"key": "property_type",
+											"value": "<string>",
+											"description": "Property Type (This can only be one of residential,commercial,null)",
+											"type": "text"
+										},
+										{
+											"key": "name_on_bill",
+											"value": "<string>",
+											"description": "Name on electric bill",
+											"type": "text"
+										},
+										{
+											"key": "meter_box_id",
+											"value": "<string>",
+											"description": "Meter Box ID",
+											"type": "text"
+										},
+										{
+											"key": "avg_energy_consumption",
+											"value": "<number>",
+											"description": "Average Energy Consumption Per Month",
+											"type": "text"
+										},
+										{
+											"key": "property_address",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "Property Address",
+											"type": "text"
+										},
+										{
+											"key": "buy_percent",
+											"value": "<number>",
+											"description": "Buy Percent",
+											"type": "text"
+										},
+										{
+											"key": "preferred_energy",
+											"value": "<string>",
+											"description": "Preferred Energy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Method Not Allowed",
+							"code": 405,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_no",
+											"value": "<string>",
+											"description": "Customer NO",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Property Name",
+											"type": "text"
+										},
+										{
+											"key": "property_type",
+											"value": "<string>",
+											"description": "Property Type (This can only be one of residential,commercial,null)",
+											"type": "text"
+										},
+										{
+											"key": "name_on_bill",
+											"value": "<string>",
+											"description": "Name on electric bill",
+											"type": "text"
+										},
+										{
+											"key": "meter_box_id",
+											"value": "<string>",
+											"description": "Meter Box ID",
+											"type": "text"
+										},
+										{
+											"key": "avg_energy_consumption",
+											"value": "<number>",
+											"description": "Average Energy Consumption Per Month",
+											"type": "text"
+										},
+										{
+											"key": "property_address",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "Property Address",
+											"type": "text"
+										},
+										{
+											"key": "buy_percent",
+											"value": "<number>",
+											"description": "Buy Percent",
+											"type": "text"
+										},
+										{
+											"key": "preferred_energy",
+											"value": "<string>",
+											"description": "Preferred Energy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "customer_no",
+											"value": "<string>",
+											"description": "Customer NO",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "<string>",
+											"description": "Property Name",
+											"type": "text"
+										},
+										{
+											"key": "property_type",
+											"value": "<string>",
+											"description": "Property Type (This can only be one of residential,commercial,null)",
+											"type": "text"
+										},
+										{
+											"key": "name_on_bill",
+											"value": "<string>",
+											"description": "Name on electric bill",
+											"type": "text"
+										},
+										{
+											"key": "meter_box_id",
+											"value": "<string>",
+											"description": "Meter Box ID",
+											"type": "text"
+										},
+										{
+											"key": "avg_energy_consumption",
+											"value": "<number>",
+											"description": "Average Energy Consumption Per Month",
+											"type": "text"
+										},
+										{
+											"key": "property_address",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "Property Address",
+											"type": "text"
+										},
+										{
+											"key": "buy_percent",
+											"value": "<number>",
+											"description": "Buy Percent",
+											"type": "text"
+										},
+										{
+											"key": "preferred_energy",
+											"value": "<string>",
+											"description": "Preferred Energy",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete a Property Information",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/property/:propertyId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property",
+								":propertyId"
+							],
+							"variable": [
+								{
+									"key": "propertyId",
+									"value": "40",
+									"description": "(Required) ID of Property to return"
+								}
+							]
+						},
+						"description": "Delete a Property Information"
+					},
+					"response": [
+						{
+							"name": "Property information not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Invalid ID supplied",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/:propertyId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										":propertyId"
+									],
+									"variable": [
+										{
+											"key": "propertyId"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Read the list of Property",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/v1/property/list?prosumer_email=sajandhakal14@gmail.com",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"property",
+								"list"
+							],
+							"query": [
+								{
+									"key": "prosumer_email",
+									"value": "sajandhakal14@gmail.com",
+									"description": "(Required) Prosumer email"
+								}
+							]
+						},
+						"description": "Read the list of Property"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/list?prosumer_email=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"list"
+									],
+									"query": [
+										{
+											"key": "prosumer_email",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n {\n  \"id\": -46818246,\n  \"name\": \"aute eiusmod sed\",\n  \"prosumer_email\": \"sed\",\n  \"property_type\": \"et cupidatat velit nostrud\",\n  \"name_on_bill\": \"mollit minim quis Excep\",\n  \"meter_box_id\": \"ut fugiat reprehenderit\",\n  \"customer_no\": \"la\",\n  \"avg_energy_consumption\": -85556801.06093112,\n  \"buy_percent\": -109691.58498066664,\n  \"created_date\": -70185790.32411933,\n  \"updated_date\": -52104380.31573066\n },\n {\n  \"id\": -34085731,\n  \"name\": \"irure\",\n  \"prosumer_email\": \"mag\",\n  \"property_type\": \"cillum dolor\",\n  \"name_on_bill\": \"fugiat quis\",\n  \"meter_box_id\": \"ea labore\",\n  \"customer_no\": \"cupidatat dolore fugiat elit\",\n  \"avg_energy_consumption\": -32665079.603294075,\n  \"buy_percent\": 7360120.403178841,\n  \"created_date\": -26556216.6520036,\n  \"updated_date\": -32383871.301592126\n }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/api/v1/property",
+			"disabled": true
+		}
+	]
+}
