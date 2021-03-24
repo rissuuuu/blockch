@@ -1,7 +1,10 @@
 contract Counter{
     uint public count;
     event senderlogger(address);
-
+    
+    constructor (){
+    count=0;
+    }
     
     function getCount() public view returns (uint){
         return count;
