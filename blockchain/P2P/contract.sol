@@ -1,48 +1,26 @@
 pragma solidity ^0.8.2;
-contract UserRecords{
-
-    enum genderType {male,female}
+contract BuyerRecords{
+    uint public dueDate;
+    uint public invoiceAmount;
+    address serviceProvider;
     
-    address[] public senders;
     
-    struct user{
+    struct Buyer{
         string name;
-        genderType gender;
+        int buyer_property_id;
+        string seller_name;
+        int seller_energy_id;
+        int seller_property_id;
+        
     }
 
-    user user_obj;
+   constructor(uint _invoiceAmount) public {
+    dueDate = block.timestamp + 200;
+    invoiceAmount = _invoiceAmount;
+    serviceProvider = msg.sender;
+  }
     
 
-    function getGenderFromString(string memory gender) internal returns(genderType) {
-    if(keccak256(bytes(gender)) == keccak256(bytes("male"))) {
-        return genderType.male;
-    } else {
-        return genderType.female;
-    }
-}
     
-    function getGendertoString (genderType gender) internal returns (string memory){
-        if (gender==genderType.male){
-            return "male";
-        }
-        else{
-            return "female";
-        }
-    }
-
-    function setUser(string memory name, string memory gender) public {
-        genderType gender_type = getGenderFromString(gender);
-        user_obj=user({name:name,gender:gender_type});
-        senders.push(msg.sender);
-    
-    }
-    
-    function getUser() public returns (string memory,string memory){
-        return (user_obj.name,getGendertoString(user_obj.gender));
-    }
-    
-    function getAddresses() public returns (address[] memory){
-        return senders;
-    }
 
 }
