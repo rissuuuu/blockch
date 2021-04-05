@@ -2,23 +2,29 @@ pragma solidity ^0.8.2;
 
 contract SmartInvoice {
 
-    struct User{
+    struct Payment{
         uint  dueDate;
         uint  invoiceAmount;
-        address serviceProvider;
+        address from;
+        address to;
+        
     }
     
-    User user_obj;
+    Payment payment;
 
-    function payAmount(uint invoiceAmount) public {
+    function payAmount(uint invoiceAmount,address to) public {
         uint dueDate = block.timestamp;
         uint invoiceAmount = invoiceAmount;
-        address serviceProvider = msg.sender;
-                       user_obj=User({dueDate:dueDate,invoiceAmount:invoiceAmount,
-                       serviceProvider:serviceProvider});
+        address to = to;
+        address from = msg.sender;
+        
+                       payment=Payment({dueDate:dueDate,invoiceAmount:invoiceAmount,
+                       from:from,
+                       to:to});
                        
     }
-    function getUser() public returns (uint,uint,address){
-            return (user_obj.dueDate,user_obj.invoiceAmount,user_obj.serviceProvider);
+    function getUser() public returns (uint,uint,address,address){
+            return (payment.dueDate,payment.invoiceAmount,payment.from,
+            payment.to);
         }
 }
