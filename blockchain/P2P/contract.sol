@@ -1,6 +1,14 @@
 pragma solidity ^0.8.2;
 
 contract SmartInvoice {
+    
+    address owner;
+    Payment payment;
+    uint public amount;
+    
+    constructor() public{
+        owner=msg.sender;
+        }
 
     struct Payment{
         uint  dueDate;
@@ -10,8 +18,6 @@ contract SmartInvoice {
         
     }
     
-    Payment payment;
-
     function payAmount(uint invoiceAmount,address to) public {
         uint dueDate = block.timestamp;
         uint invoiceAmount = invoiceAmount;
@@ -27,4 +33,8 @@ contract SmartInvoice {
             return (payment.dueDate,payment.invoiceAmount,payment.from,
             payment.to);
         }
+        
+    function payme () public payable{
+        amount+=msg.value;
+    }
 }
